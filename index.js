@@ -1,10 +1,5 @@
 paypal.Buttons({
     createOrder: function(data, actions) {
-        //this function sets up the details of the transaction, including the 
-        //amount and line item details
-        //use this dummy account 
-            //email: sb-snzzo27128519@personal.example.com 
-            //password: :!)y6vOz
         return actions.order.create({
             purchase_units: [{
                 amount: {
