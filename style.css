@@ -1,0 +1,7 @@
+.paying {
+    display: flex;
+    justify-content: center;
+    
+    height: 30rem;
+    padding: 5rem;
+}

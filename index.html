@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy with Paypal</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    
+</head>
+<body>
+    <section class="paying">
+        <div id="paypal-button"></div>
+    </section>    
+    <script src="https://www.paypal.com/sdk/js?client-id=AeUkA5wc8JrMndA8Bqzsjnl3w303fbcsVzt2AODsv2waiUHj4was673IUD3pYVWabBKLirbmPM_pzk7U"></script>
+
+    <script>
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+             
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                             value: "299.9"
+                        }
+                    }]
+                });
+            }, 
+
+            onApprove: function(data, actions) {
+                alert('Payment completed successfully!');
+                
+            }, 
+            onError: function(err) {
+                console.error('Error during payment:', err);
+                alert('Payment failed. Please try again.');
+            }
+        }).render('#paypal-button')
+    </script>
+</html>
+
+
+
